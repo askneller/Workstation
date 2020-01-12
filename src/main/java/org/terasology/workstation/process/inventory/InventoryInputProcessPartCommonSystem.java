@@ -121,7 +121,7 @@ public class InventoryInputProcessPartCommonSystem extends BaseComponentSystem {
         }
 
         for (Map.Entry<String, Integer> itemCount : inventoryInputComponent.itemCounts.entrySet()) {
-            result.put(new ItemPrefabPredicate(Assets.getPrefab(itemCount.getKey()).get().getUrn()), itemCount.getValue());
+            result.put(ItemPrefabPredicateFactory.get(Assets.getPrefab(itemCount.getKey()).get().getUrn()), itemCount.getValue());
         }
         return result;
     }
